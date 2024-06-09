@@ -13,6 +13,9 @@ https://www.digitalocean.com/community/tutorials/nginx-location-directive
 ![Screenshot from 2024-06-09 18-14-29](https://github.com/VIK2395/Nginx/assets/50545334/5f5e76d2-b4b8-4359-857b-892dc1b57cc8)
 ![Screenshot from 2024-06-09 18-13-20](https://github.com/VIK2395/Nginx/assets/50545334/78fc8739-1002-4ec9-89c7-70bca10c04c0)
 
+Nginx location block matching algorithm:\
+https://artfulrobot.uk/blog/untangling-nginx-location-block-matching-algorithm
+
 
 Directive Inheritance in Nested Location Blocks:\
 https://stackoverflow.com/questions/32104731/directive-inheritance-in-nested-location-blocks
