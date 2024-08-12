@@ -14,7 +14,13 @@ https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx
 - https://nginx.org/en/docs/http/ngx_http_core_module.html#variables
 - https://nginx.org/en/docs/http/ngx_http_log_module.html#log_format
 
-# log_level for error_log
+# severity_level for error_log
 
 https://www.digitalocean.com/community/tutorials/nginx-access-logs-error-logs \
 ![Screenshot from 2024-08-12 18-26-06](https://github.com/user-attachments/assets/8b715acc-f548-4f19-b202-0e290a244dfa)
+
+https://docs.nginx.com/nginx/admin-guide/monitoring/logging/#:~:text=Possible%20values%20in%20order%20of,emerg%20levels%20to%20be%20logged. \
+![Screenshot from 2024-08-13 00-09-19](https://github.com/user-attachments/assets/883eb854-c0f2-452f-a438-ccdca4e64931)
+
+https://www.digitalocean.com/community/tutorials/nginx-access-logs-error-logs#nginx-error-log-severity-levels \
+![Screenshot from 2024-08-13 00-10-19](https://github.com/user-attachments/assets/cef30d4a-ee47-4e4d-a4cd-889752ba78e4)
