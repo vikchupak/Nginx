@@ -25,3 +25,6 @@ https://nginx.org/en/docs/http/ngx_http_proxy_module.html
 https://nginx.org/en/docs/http/ngx_http_ssl_module.html
 
 - ssl_session_timeout
+
+Коли клієнт закрив по таймауту конекшин до того як proxied server відповів\
+![image](https://github.com/user-attachments/assets/61e08122-9e0b-4753-97e7-5d2d0550a0cc)
