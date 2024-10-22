@@ -30,3 +30,6 @@ https://nginx.org/en/docs/http/ngx_http_ssl_module.html
 ![image](https://github.com/user-attachments/assets/61e08122-9e0b-4753-97e7-5d2d0550a0cc)
 
 503 when no response from proxied server or the proxied server responds 500
+
+https://stackoverflow.com/questions/26827906/nginx-error-code-502-503
+
