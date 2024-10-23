@@ -24,6 +24,9 @@ server {
 <!--# include virtual="/remote/body.php?argument=value" -->
 ```
 
-This SSI directive includes the output of an external resource into the current file.\
-Nginx SSI is typically used for HTML documents, and it expects the included content to be something that can be rendered within an HTML page.\
+- **`#include`**: This directive is used to include files or the output of another resource into the current HTML.
+- **`virtual="/remote/body.php?argument=value"`**: This tells Nginx to include the output of `/remote/body.php?argument=value`. The `virtual` attribute is used to indicate a URL or path that Nginx can serve, either locally or remotely.
+
+This SSI directive includes the output of an external resource into the current file.
+Nginx SSI is typically used for HTML documents, and it expects the included content to be something that can be rendered within an HTML page.
 So, the directive MUST return HTML or text data that can be inserted directly into the HTML file being processed.
