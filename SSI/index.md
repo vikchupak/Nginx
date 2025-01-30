@@ -30,3 +30,60 @@ server {
 This SSI directive includes the output of an external resource into the current file.
 Nginx SSI is typically used for HTML documents, and it expects the included content to be something that can be rendered within an HTML page.
 So, the directive MUST return HTML or text data that can be inserted directly into the HTML file being processed.
+
+# Virtual path and hostname
+
+When using **`virtual="..."`** in an Nginx **SSI (`#include`) directive**, the request is handled internally by Nginx. This means:  
+
+- The hostname in `virtual="..."` refers to **the same Nginx server handling the current request**.  
+- Nginx processes the URI as if it were requested directly by a client.  
+- It does **not** automatically proxy to external servers unless additional configurations (like `proxy_pass`) are set up.  
+
+### Example: Internal Request  
+#### **Nginx Configuration**
+```nginx
+server {
+    listen 80;
+    server_name example.com;
+
+    ssi on;
+
+    location / {
+        root /var/www/html;
+    }
+
+    location /remote/ {
+        root /var/www/html;
+        index body.php;
+    }
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
+```
+#### **HTML File (`index.html`)**
+```html
+<!--# include virtual="/remote/body.php?argument=value" -->
+```
+- The SSI request to `/remote/body.php?argument=value` is handled **internally** by Nginx.
+- It is equivalent to opening `http://example.com/remote/body.php?argument=value`.
+
+---
+
+### What If You Need an External Server?  
+If you want to include content from another server (e.g., `http://external.com/data`), SSI alone **cannot** do this directly. Instead, you must use **proxying**:
+
+#### **Solution: Proxy to External Server**
+```nginx
+location /external/ {
+    proxy_pass http://external.com/;
+}
+```
+Then in your HTML:
+```html
+<!--# include virtual="/external/data" -->
+```
+Now, the request fetches content from `http://external.com/data`.
