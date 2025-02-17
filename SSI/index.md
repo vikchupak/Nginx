@@ -29,7 +29,7 @@ server {
 
 This SSI directive includes the output of an external resource into the current file.
 Nginx SSI is typically used for HTML documents, and it expects the included content to be something that can be rendered within an HTML page.
-So, the directive MUST return HTML or text data that can be inserted directly into the HTML file being processed.
+So, **the directive MUST return HTML or text data** that can be inserted directly into the HTML file being processed.
 
 # Virtual path and hostname
 
